@@ -43,6 +43,8 @@ final_df = pd.merge(win_counts, runner_up_counts, on='Country', how='outer').fil
 final_df['Total Appearances'] = final_df['Wins'] + final_df['Runner-Ups']
 
 app = dash.Dash(__name__)
+server = app.server
+
 
 app.layout = html.Div([
     html.H1("FIFA World Cup Winners and Runner-Ups Dashboard"),
@@ -107,4 +109,4 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
-# Deployed at https://cp321-aksp.onrender.com/
+# Deployed at https://cp321-aksp.onrender.com/server = app.server
